@@ -1,5 +1,3 @@
-// src/pages/CandidateSearch.tsx
-import React, { useEffect, useState } from 'react';
 import { searchGithub, searchGithubUser } from '../api/API';
 import CandidateCard from '../components/CandidateCard';
 import { User } from '../types';

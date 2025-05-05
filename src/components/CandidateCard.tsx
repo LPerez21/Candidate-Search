@@ -1,4 +1,5 @@
 // src/components/CandidateCard.tsx
+import React from 'react';
 import { User } from '../types';
 
 interface Props {

@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import CandidateCard from '../components/CandidateCard';
 import { User } from '../types';
 

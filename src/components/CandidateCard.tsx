@@ -1,15 +1,17 @@
-// src/components/CandidateCard.tsx
-import { User } from '../types';
+import type { Candidate } from '../interfaces/Candidate.interface';
 
 interface Props {
-  user: User;
+  user: Candidate;
   showDetails?: boolean;
 }
 
 export default function CandidateCard({ user, showDetails }: Props) {
   return (
     <div className="candidate-card">
-      <img src={user.avatar_url} alt={user.login} />
+      <img
+        src={user.avatar_url || 'https://placehold.co/100x100?text=No+Image'}
+        alt={user.login}
+      />
       <h2>{user.name ?? user.login}</h2>
       <p><strong>Username:</strong> {user.login}</p>
       {user.location && <p><strong>Location:</strong> {user.location}</p>}
@@ -19,8 +21,8 @@ export default function CandidateCard({ user, showDetails }: Props) {
       {showDetails && (
         <>
           {user.bio && <p><strong>Bio:</strong> {user.bio}</p>}
-          <p><strong>Followers:</strong> {user.followers}</p>
-          <p><strong>Public repos:</strong> {user.public_repos}</p>
+          <p><strong>Followers:</strong> {user.followers ?? 'N/A'}</p>
+          <p><strong>Public repos:</strong> {user.public_repos ?? 'N/A'}</p>
         </>
       )}
 
